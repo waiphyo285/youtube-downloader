@@ -33,6 +33,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
     <div class="container shadow-lg my-5 py-4">
       <h1 class="text-center">
@@ -54,14 +55,13 @@
               Download
             </button>
             <div class="dropdown-menu">
-              <% info.forEach((format) => { %>
+              <% info.forEach((format)=> { %> <% if(format.hasAudio) { %>
               <a class="dropdown-item" href="<%= format.url %>">
+                <i class="fas fa-volume-up text-success"></i>
                 <%= format.mimeType.split(";")[0] %> <%= format.hasVideo ?
-                format.height + "p" : "" %> <% if(!format.hasAudio) { %>
-                <i class="fas fa-volume-mute text-danger"></i>
-                <% } %>
+                format.height + "p" : "" %>
               </a>
-              <% }); %>
+              <% } %> <% }); %>
             </div>
           </div>
         </div>
