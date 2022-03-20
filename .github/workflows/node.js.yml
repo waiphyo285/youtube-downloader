@@ -45,5 +45,5 @@ jobs:
           git pull origin main
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
-          npm install youtube-downloader
-          pm2 restart 
+          npm install 
+          pm2 restart youtube-downloader
